@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+// ユーザー登録
+Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('auth/register', 'Auth\RegisterController@register');
+
+// ログイン
+Route::get('auth/login', 'Auth\LoginController@showLoginForm');
+Route::post('auth/login', 'Auth\LoginController@login');
+
+// ログアウト
+Route::get('auth/logout', 'Auth\LoginController@logout');
